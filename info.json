@@ -6,7 +6,7 @@
 	"author": "ZwerOxotnik",
 	"contact": "zweroxotnik@gmail.com, Discord:ZwerOxotnik#7117",
 	"homepage": "",
-	"description": "Research for money",
+	"description": "Research for money.",
 	"dependencies": [
 		"base",
 		"EasyAPI >= 0.5.0",
