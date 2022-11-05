@@ -57,5 +57,9 @@ end
 
 
 for _, _data in pairs(data.raw.lab) do
-	_data.inputs = {"coin-for-science"}
+  if _data.inputs then
+    table.insert(_data.inputs, "coin-for-science")
+  else
+    _data.inputs = {"coin-for-science"}
+  end
 end
