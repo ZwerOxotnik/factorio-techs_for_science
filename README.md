@@ -44,8 +44,8 @@
   align="right"
 /> -->
 
-Techs for science (extension for EasyAPI)
------------------------------------------
+Techs for money (extension for EasyAPI)
+---------------------------------------
 
 Research for money.
 

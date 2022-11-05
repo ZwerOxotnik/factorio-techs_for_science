@@ -1,12 +1,12 @@
 {
 	"name": "techs_for_science",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"factorio_version": "1.1",
-	"title": "Techs for science (extension for EasyAPI)",
+	"title": "Techs for money (extension for EasyAPI)",
 	"author": "ZwerOxotnik",
 	"contact": "zweroxotnik@gmail.com, Discord:ZwerOxotnik#7117",
 	"homepage": "",
-	"description": "Research for money.",
+	"description": "Research for money",
 	"dependencies": [
 		"base",
 		"EasyAPI >= 0.5.0",

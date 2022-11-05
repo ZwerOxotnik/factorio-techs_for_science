@@ -2,8 +2,6 @@ data:extend({
   {
     type = "tool",
     name = "coin-for-science",
-    localised_name = {"item-name.coin"},
-    localised_description = {"item-description.coin"},
     icon = "__base__/graphics/icons/coin.png",
     icon_size = 64, icon_mipmaps = 4,
     subgroup = "science-pack",
@@ -55,4 +53,9 @@ for _, _data in pairs(data.raw.technology) do
 	if coins > 0 then
 		table.insert(ingredients, {"coin-for-science", coins})
 	end
+end
+
+
+for _, _data in pairs(data.raw.lab) do
+	_data.inputs = {"coin-for-science"}
 end
