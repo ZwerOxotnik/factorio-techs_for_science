@@ -15,51 +15,51 @@ data:extend({
     name = "coin-for-science",
     enabled = true,
     energy_required = 0.5,
-    ingredients = {{"coin", 100}},
-    result_count = 100,
-    result = "coin-for-science"
+    ingredients = {{type = "item", name = "coin", amount = 100}},
+    results = {{type = "item", name = "coin-for-science", amount = 100}}
   }, {
     type = "recipe",
     name = "science-for-coin",
     enabled = true,
     energy_required = 0.5,
-    ingredients = {{"coin-for-science", 100}},
-    result_count = 100,
-    result = "coin"
+    ingredients = {{type = "item", name = "coin-for-science", amount = 100}},
+    results = {{type = "item", name = "coin", amount = 100}}
   }
 })
 
 local price_list = {
 	["automation-science-pack"] = 6,
-	["logistic-science-pack"] = 12,
-	["military-science-pack"] = 40,
-	["chemical-science-pack"] = 95,
+	["logistic-science-pack"]   = 12,
+	["military-science-pack"]   = 40,
+	["chemical-science-pack"]   = 95,
 	["production-science-pack"] = 220,
-	["utility-science-pack"] = 440
+	["utility-science-pack"]    = 440
 }
 
-for _, _data in pairs(data.raw.technology) do
-	local coins = 0
-	local ingredients = _data.unit.ingredients
-	for i=#ingredients, 1, -1 do
-		local ingredient = ingredients[i]
-		local cost = price_list[ingredient[1]]
-		if cost then
-			coins = coins + cost * ingredient[2]
-			ingredients[i] = nil
-		end
-	end
+for _, prototype in pairs(data.raw.technology) do
+	if prototype.unit and prototype.unit.ingredients then
+    local coins = 0
+    local ingredients = prototype.unit.ingredients
+    for i, ingredient in ipairs(ingredients) do
+      local cost = price_list[ingredient[1]]
+      -- TODO: improve
+      if cost then
+        coins = coins + cost * ingredient[2]
+        table.remove(ingredients, i)
+      end
+    end
 
-	if coins > 0 then
-		table.insert(ingredients, {"coin-for-science", coins})
-	end
+    if coins > 0 then
+      table.insert(ingredients, {"coin-for-science", coins})
+    end
+  end
 end
 
 
-for _, _data in pairs(data.raw.lab) do
-  if _data.inputs then
-    table.insert(_data.inputs, "coin-for-science")
+for _, prototype in pairs(data.raw.lab) do
+  if prototype.inputs then
+    table.insert(prototype.inputs, "coin-for-science")
   else
-    _data.inputs = {"coin-for-science"}
+    prototype.inputs = {"coin-for-science"}
   end
 end

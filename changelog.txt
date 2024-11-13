@@ -1,4 +1,14 @@
 ﻿---------------------------------------------------------------------------------------------------
+Version: 0.6.0
+Date: 2024-11-13
+  Changes:
+    - Updated for Factorio 2.0
+  Locale:
+    - Added Ukrainian translation (thanks to @Met_en_Bouldry on crowdin)
+    - Added French translation (thanks to @Supershadow301 on crowdin)
+    - Added Polish translation (thanks to @megalordgier2.0 (megalordgier) on crowdin)
+    - Translations: https://crowdin.com/project/factorio-mods-localization (thank you for contributions, I really appreciate it)
+---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 2022-11-05
   Changes:
